@@ -9,19 +9,21 @@ call plug#end()
 
 
 syntax on
-filetype indent on
-set tabstop=4
-set softtabstop=4
-set expandtab
-set shiftwidth=4
+filetype indent plugin on
+set tabstop=4               " Number of visual spaces per tab
+set softtabstop=4           " Number of spaces in tab when editing
+set expandtab               " Tabs are spaces
+set shiftwidth=4            " Indentation when doing >>
 
-set number
-set showcmd
-set wildmenu
+set number relativenumber   " Show linenumbers (hybrid)
+set showcmd                 " Show command on bottom right
+set wildmenu                " Display command line’s tab complete options as a menu
 
-set showmatch
-set incsearch
-set hlsearch
+set showmatch               " Highlight matching parens
+set matchtime=3             " Faster matching
+
+set incsearch               " Incremental search
+set hlsearch                " Highlight search
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
@@ -29,8 +31,15 @@ nnoremap <leader><space> :nohlsearch<CR>
 " remove C/C++ single-line comment continuation
 au FileType c,cpp setlocal comments-=:// comments+=f://
 
-set laststatus=2
-set noshowmode
+
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+
+set laststatus=2    " Always display the status bar
+set noshowmode      " Hide -- INSERT --
 
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -41,9 +50,11 @@ if ! has('gui_running')
     augroup END
 endif
 
+
 set termguicolors
 set background=dark
 colorscheme gruvbox
+
 
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
