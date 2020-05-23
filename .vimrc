@@ -31,12 +31,14 @@ nnoremap <leader><space> :nohlsearch<CR>
 " remove C/C++ single-line comment continuation
 au FileType c,cpp setlocal comments-=:// comments+=f://
 
-
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 
 set laststatus=2    " Always display the status bar
 set noshowmode      " Hide -- INSERT --
