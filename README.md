@@ -10,6 +10,7 @@ dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 omf install bobthefish
+omf install nvm
 ```
 
 ### Vim
